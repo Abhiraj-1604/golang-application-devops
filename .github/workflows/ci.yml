@@ -25,7 +25,7 @@ jobs:
         go-version: 1.22
 
     - name: Build
-      run: go build -o go-web-app
+      run: go build -o golang-app
 
     - name: Test
       run: go test ./...
@@ -66,7 +66,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/go-web-app:${{github.run_id}}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/golang-app:${{github.run_id}}
 
   update-newtag-in-helm-chart:
     runs-on: ubuntu-latest
